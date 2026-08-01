@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* v1 switched layout on orientation rather than on width — kept as a variant. */
+@custom-variant portrait (@media (orientation: portrait));
+
+@theme inline {
+  --font-sans: var(--font-open-sans);
+  /* Shows through wherever the background photo does not reach. */
+  --color-station: #7a9ab4;
+}
+
+@layer components {
+  .volume-slider {
+    appearance: none;
+    background: transparent;
+  }
+
+  .volume-slider:focus {
+    outline: none;
+  }
+
+  .volume-slider::-webkit-slider-runnable-track {
+    height: 2px;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+  }
+
+  .volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    margin-top: -6.5px;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+  }
+
+  .volume-slider::-moz-range-track {
+    height: 2px;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+  }
+
+  .volume-slider::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    border: 0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+  }
+
+  .volume-slider:focus-visible::-webkit-slider-thumb,
+  .volume-slider:focus-visible::-moz-range-thumb {
+    outline: 2px solid white;
+    outline-offset: 3px;
+  }
+}
